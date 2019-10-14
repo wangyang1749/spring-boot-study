@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 chmod +x gradlew
-./gradlew build
+./gradlew clean build
 echo "-----------------------"
 pid=`lsof -i:8084 | awk '{print $2}' | tail -n 1`
 if [  -n "$pid" ];then ~/springboot_demo/
