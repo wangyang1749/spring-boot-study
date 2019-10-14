@@ -5,6 +5,7 @@
     <title>阅读列表</title>
 </head>
 <body>
+    <h2>阅读列表</h2>
     <div th:unless="${#lists.isEmpty(books)}">
         <dl th:each="book : ${books}">
             <dt>
