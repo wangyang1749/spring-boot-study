@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WishList</title>
+</head>
+<body>
+<div th:unless="${#lists.isEmpty(wishes)}">
+    <dl th:each="wish : ${wishes}">
+        <!--<dt>-->
+
+        <!--</dt>-->
+
+        <dd>
+            ID:<span th:text="${wish.id}">Id</span><br>
+            message: <span th:text="${wish.message}">Id</span>
+            <a th:href="@{'/wish/delWish/'+${wish.id}}">删除</a>
+        </dd>
+        <hr>
+    </dl>
+</div>
+<form method="post" action="/wish/add_h">
+    <input type="text" name="message">
+    <input type="submit">
+</form>
+33333333333
+</body>
+</html>

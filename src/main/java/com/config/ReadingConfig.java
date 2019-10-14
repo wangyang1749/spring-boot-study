@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 public class ReadingConfig {
-    @Bean
+//    @Bean
     public DataSource dataSource(){
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl("jdbc:mysql://localhost:3306/spring_boot_study?serverTimezone=GMT&characterEncoding=UTF-8");
