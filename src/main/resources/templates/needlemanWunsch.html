@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Needleman-Wunsch</title>
+</head>
+<body>
+<h2>Needleman-Wunsch序列比对</h2>
+<form  action="nw">
+    <table>
+        <tr>
+            <td>序列1</td>
+            <td><textarea name="sequence1" th:text="${sequence1}"></textarea></td>
+        </tr>
+        <tr>
+            <td>序列2</td>
+            <td><textarea name="sequence2" th:text="${sequence2}"></textarea></td>
+        </tr>
+        <tr>
+            <td>匹配</td>
+            <td><input type="text" value="4"></td>
+        </tr>
+        <tr>
+            <td>错配</td>
+            <td><input type="text" value="-3"></td>
+        </tr>
+        <tr>
+            <td>空位</td>
+            <td><input type="text" value="-4"></td>
+        </tr>
+        <tr>
+            <td ><input type="submit" value="运行"></td>
+        </tr>
+
+    </table>
+</form>
+<div th:if="${nws}">
+<hr>
+
+        <table border="1">
+            <tr>
+                <td></td>
+                <td></td>
+                <td  th:each=" top : ${nws.sequence2}" th:text="${top} "></td>
+            </tr>
+            <tr th:each="left : ${nws.computedMatrix}"  >
+                <td th:if="${leftStat.index==0}"></td>
+                <td  th:if="${leftStat.index!=0}" th:text="${nws.sequence1[(leftStat.index)-1]}" ></td>
+                <td th:each="middle : ${nws.computedMatrix[0]}" th:text="${nws.computedMatrix[leftStat.index][middleStat.index]}"></td>
+            </tr>
+        </table>
+    <!--</div>-->
+<hr>
+<table>
+    <tr>
+        <td th:each="r : ${nws.result2}"  th:text="${r}"></td>
+    </tr>
+    <tr>
+        <td th:each="r : ${nws.result1}"  th:text="${r}"></td>
+    </tr>
+</table>
+
+
+    </div>
+
+
+</body>
+</html>
