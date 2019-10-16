@@ -20,6 +20,9 @@ public class NeedlemanWunschController {
         model.addAttribute("nws",needlemanWunshDTO);
         model.addAttribute("sequence1",sequence1);
         model.addAttribute("sequence2",sequence2);
+        model.addAttribute("match",match);
+        model.addAttribute("mismatch",mismatch);
+        model.addAttribute("gap",gap);
 
         return "needlemanWunsch";
     }
@@ -31,13 +34,13 @@ public class NeedlemanWunschController {
     }
     public NeedlemanWunshDTO doComparision(String sequence1, String sequence2,int match,int mismatch,int gap){
         NeedlemanWunshDTO needlemanWunshDTO=null;
-        float matchScore = 4;
-        float mismatchScore = -3;
-        float indelScore = -4;
+//        float matchScore = 4;
+//        float mismatchScore = -3;
+//        float indelScore = -4;
         if(sequence1!=null&&sequence2!=null&&!"".equals(sequence1)&&!"".equals(sequence2)){
             needlemanWunshDTO= new NeedlemanWunshDTO();
-            float[][]  computedMatrix = NeedlemanWunsch.computeMatrix(sequence1, sequence2, matchScore, mismatchScore, indelScore);
-            OptimalAlignment optimalAlignment = NeedlemanWunsch.obtainOptimalAlignmentByDownmostOrder(computedMatrix, sequence1, sequence2, matchScore, mismatchScore, indelScore);
+            float[][]  computedMatrix = NeedlemanWunsch.computeMatrix(sequence1, sequence2, match, mismatch, gap);
+            OptimalAlignment optimalAlignment = NeedlemanWunsch.obtainOptimalAlignmentByDownmostOrder(computedMatrix, sequence1, sequence2, match, mismatch, gap);
             needlemanWunshDTO.setComputedMatrix(computedMatrix);
             needlemanWunshDTO.setResult1(optimalAlignment.getResult1());
             needlemanWunshDTO.setResult2(optimalAlignment.getResult2());

@@ -20,15 +20,15 @@
         </tr>
         <tr>
             <td>匹配</td>
-            <td><input type="text" value="4"></td>
+            <td><input type="text" placeholder="4" name="match" th:value="${match}"></td>
         </tr>
         <tr>
             <td>错配</td>
-            <td><input type="text" value="-3"></td>
+            <td><input type="text" placeholder="-3" name="mismatch" th:value="${mismatch}"></td>
         </tr>
         <tr>
             <td>空位</td>
-            <td><input type="text" value="-4"></td>
+            <td><input type="text" placeholder="-4" name="gap" th:value="${gap}"></td>
         </tr>
         <tr>
             <td ><input type="submit" value="运行"></td>
