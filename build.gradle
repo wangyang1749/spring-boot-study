@@ -5,6 +5,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'
 }
 repositories {
+    maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     mavenCentral()
 }
 configurations {
@@ -23,6 +24,14 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.json:json:20180813'
     implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'javax.xml.bind:jaxb-api:2.3.0'
+    implementation 'com.sun.xml.bind:jaxb-impl:2.3.0'
+    implementation 'com.sun.xml.bind:jaxb-core:2.3.0'
+    implementation 'org.javassist:javassist:3.26.0-GA'
+
+
+
+
 //    implementation 'org.springframework.boot:spring-boot-starter-security'
     runtime 'com.h2database:h2'
     runtime 'mysql:mysql-connector-java'

@@ -23,7 +23,7 @@ public class NeedlemanWunschController {
         model.addAttribute("match",match);
         model.addAttribute("mismatch",mismatch);
         model.addAttribute("gap",gap);
-
+        
         return "needlemanWunsch";
     }
     @RequestMapping(value = "nwSubmit",params = "json")
@@ -51,5 +51,9 @@ public class NeedlemanWunschController {
         return needlemanWunshDTO;
     }
 
+    // @RequestMapping
+    public void test(){
+        
+    }
 
 }

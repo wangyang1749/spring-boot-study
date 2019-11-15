@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vote</title>
+</head>
+<!--<span th:text="${json}">Author</span>-->
+<table align="center" border="0.5" style="text-align: center;">
+    <tr>
+        <td>头像</td>
+        <td><img th:src="${json.getString('image')}" width="50"/></td>
+    </tr>
+    <tr>
+        <td>姓名</td>
+        <td><span th:text="${json.getString('title')}">Author</span></td>
+    </tr>
+    <tr>
+        <td>投票数</td>
+        <td><span th:text="${json.getString('voteNumber')}">Author</span></td>
+    </tr>
+    <tr>
+        <td  colspan='2'><button><a href="https://q.yiban.cn/app/index/appid/562426">点击投票</a></button></td>
+    </tr>
+    <tr>
+            <td  colspan='2'><button><a href="/vote/ranking">点击查看崔行排名</a></button></td>
+    </tr>
+</table>
+<hr>
+<h2>请大家为正德笃行的[崔行]投一票</h2>
+<h2>谢谢！！</h2>
+<body>
+  
+
+
+</body>
+</html>
