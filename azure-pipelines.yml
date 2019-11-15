@@ -21,4 +21,8 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
-
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'build/libs'
+    Contents: '**'
+    TargetFolder: $(Build.ArtifactStagingDirectory)
