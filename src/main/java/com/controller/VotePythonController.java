@@ -35,7 +35,7 @@ public class VotePythonController {
         for(int i=0;i<jsonArray.length();i++){
             ZDOrder zdOrder = new ZDOrder();
             zdOrder.setName(jsonArray.getJSONArray(i).getString(0));
-            zdOrder.setVote(jsonArray.getJSONArray(i).getString(1)); 
+            zdOrder.setVote(jsonArray.getJSONArray(i).getInt(1)); 
             list.add(zdOrder);
         }
         model.addAttribute("list",list);

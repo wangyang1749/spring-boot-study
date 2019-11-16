@@ -6,9 +6,9 @@ package com.pojo;
 public class ZDOrder {
 
     private String name;
-    private String vote;
+    private int vote;
 
-    public String getVote(){
+    public int getVote(){
         return vote;
     }
     public String getName(){
@@ -18,7 +18,7 @@ public class ZDOrder {
     public void setName(String name){
         this.name=name;
     }
-    public void setVote(String vote){
+    public void setVote(int vote){
         this.vote=vote;
     }
 
